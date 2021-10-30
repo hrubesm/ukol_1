@@ -1,5 +1,3 @@
-# DEADLINE: 6.11. v 23:59
-# Vše najdeš na webu
 from turtle import * #Import všech funkcí ze želvy
 
 print("Zadejte počet sloupců hracího pole.")  #Volitelná velikost hrací plochy
