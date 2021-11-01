@@ -94,4 +94,4 @@ while pocpol > 0 : #Cyklus se bude opakovat, dokud nebudou všechna pole plná
     pocpol -= 1 #Odečtení jednoho volného pole, na které byla právě nakreslena značka
     hrac1 = not hrac1 #Výměna hráčů
 print("Konec hry!")  
-exitonclick #Nechá otevřené okno s želvou
+exitonclick() #Nechá otevřené okno s želvou
