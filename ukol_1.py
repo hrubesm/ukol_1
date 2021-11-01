@@ -1,29 +1,41 @@
-from turtle import * #Import všech funkcí ze želvy
+from turtle import forward, speed, left, right, penup, pendown, goto, circle,exitonclick   #Import vybraných funkcí ze želvy
+
+print("Zadejte velikost délky jedné strany šestiúhleníku") #Volitelná velikost délky strany šestiúhelníku
+a = float(input())
+while a <= 0: #Kontrola zadávané délky strany
+    print("Nezadávejte nekladnou velikost délky. Zadejte ji prosím znovu.")
+    a = float(input())
 
 print("Zadejte počet sloupců hracího pole.")  #Volitelná velikost hrací plochy
 x = int(input())
 print("Zadejte počet řádků hracího pole.")
 y = int(input())
+while x < 0 or y < 0: #Kontrola zadávaných rozměrů sítě
+    print("Nezadávejte záporné velikosti hracího pole. Zadejte je prosím znovu.")
+    print("Zadejte počet sloupců hracího pole.")  
+    x = int(input())
+    print("Zadejte počet řádků hracího pole.")
+    y = int(input())
 for _ in range (x):   #Vykreslení šestiúhelníkové hrací plochy
     for _ in range(y):  
         for _ in range(6): #Vykreslení jednoho šestiúhelníku
             speed(10)
-            forward(30) 
+            forward(a) 
             left(60)
         left(120)
-        forward(30)
+        forward(a)
         right(60)
-        forward(30) 
+        forward(a) 
         right(60) 
-    forward(30)
+    forward(a)
     for _ in range(y): #Návrat želvy z vrchního šestiúhelníku na bod, odkud se bude vykreslovat další sloupec.
         right(60)
-        forward(30)
+        forward(a)
         right(60)
-        forward(30)
+        forward(a)
         left(120)
     left(60)
-    forward(30)
+    forward(a)
     right(60)    
 penup() #Želva při pohybu nebude psát
 goto(0,0) #Přesun želvy na počáteční souřadnice
@@ -46,51 +58,40 @@ while pocpol > 0 : #Cyklus se bude opakovat, dokud nebudou všechna pole plná
         print("Tato souřadnice je mimo pole hry. Zadejte souřadnice znovu.")
         sx = int(input())
         sy = int(input())
-    
+        
     for _ in range (sx-1): #Posun nekreslící želvy na správný sloupec
-        forward(30)
+        forward(a)
         left(60)
-        forward(30)
+        forward(a)
         right(60)
     for _ in range (sy-1): #Posun nekreslící želvy na správný řádek
         left(120)
-        forward(30)
+        forward(a)
         right(60)
-        forward(30)
+        forward(a)
         right(60)
     left(60) #Posun nekreslící želvy do středu šestiúhleníku
-    forward(30)
+    forward(a)
     right(15)
     if hrac1 == True:
         pendown()
         for _ in range (4): #Vykreslení křížku
-            forward(15)
+            forward(a/2)
             left(180)
-            forward(15)
+            forward(a/2)
             left(90)
         right(45)
         
     else: #Vykreslení kolečka
         right(135)
-        forward(15)
+        forward(a/2)
         left(90)
         pendown()
-        circle(15)
+        circle(a/2)
         
     penup()
     goto(0,0)    
     pocpol -= 1 #Odečtení jednoho volného pole, na které byla právě nakreslena značka
     hrac1 = not hrac1 #Výměna hráčů
-print("Konec hry!")   
-
-
-
-
-
-
-
-
-
-
-
-exitonclick() #Nechá otevřené okno s želvou
+print("Konec hry!")  
+exitonclick #Nechá otevřené okno s želvou
