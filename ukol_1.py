@@ -10,8 +10,8 @@ print("Zadejte počet sloupců hracího pole.")  #Volitelná velikost hrací plo
 x = int(input())
 print("Zadejte počet řádků hracího pole.")
 y = int(input())
-while x < 0 or y < 0: #Kontrola zadávaných rozměrů sítě
-    print("Nezadávejte záporné velikosti hracího pole. Zadejte je prosím znovu.")
+while x <= 0 or y <= 0: #Kontrola zadávaných rozměrů sítě
+    print("Nezadávejte nekladné velikosti hracího pole. Zadejte je prosím znovu.")
     print("Zadejte počet sloupců hracího pole.")  
     x = int(input())
     print("Zadejte počet řádků hracího pole.")
@@ -54,8 +54,8 @@ while pocpol > 0 : #Cyklus se bude opakovat, dokud nebudou všechna pole plná
     print("Hráči",hraccis,"zadej souřadnice políčka.")
     sx = int(input())
     sy = int(input())
-    while sx > x or sy > y: #Kontrola správnosti zadaných souřadnic
-        print("Tato souřadnice je mimo pole hry. Zadejte souřadnice znovu.")
+    while sx > x or sy > y or sx <= 0 or sy <= 0: #Kontrola správnosti zadaných souřadnic
+        print("Tato souřadnice je mimo pole hry. Zadejte prosím souřadnice znovu.")
         sx = int(input())
         sy = int(input())
         
