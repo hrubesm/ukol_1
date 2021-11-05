@@ -46,7 +46,7 @@ print("číslo sloupce -> enter -> číslo řádku -> enter")
 pocpol = y*x
 
 hrac1 = True
-while pocpol > 0 : #Cyklus se bude opakovat, dokud nebudou všechna pole plná
+for _ in range (pocpol) : #Cyklus se bude opakovat, dokud nebudou všechna pole plná
     if hrac1 == True: #Střídání hráčů
         hraccis = 1
     else:

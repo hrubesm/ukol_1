@@ -1,6 +1,14 @@
-Zadání:
-Vytvořte hru piškvorky, která se bude střídavě ptát hráčů na souřadnice jejich tahu. Pokud dojde k zadání souřadnic mimo herní plán, program vyzve hráče k novému zadání souřadnic. Není potřeba vyhodnocovat vítězství jednoho hráče nebo zaváďět kontrolu zajišťující obsazení pole právě jednou. Jako bonus je možno zpracovat volitelné rozměry hracího pole, síť tvořenou šestiúhelníky nebo odevzdat úkol přes GitHub.
+**Zadání:**
+Vytvořte hru piškvorky, která se bude střídavě ptát hráčů na souřadnice jejich tahu. Hrá má tyto podmínky:
+* Pokud dojde k zadání souřadnic mimo herní plán, program vyzve hráče k novému zadání souřadnic. 
+* Není potřeba vyhodnocovat vítězství jednoho hráče
+* Není potřeba zaváďět kontrolu zajišťující obsazení pole právě jednou 
 
-Vypracování:
-Prvním krokem bylo načtení vybraných funkcí z knihovny turtle. Následně dojde k vytvoření šestiúhelníkové sítě. Uživatel může na začátku zvolit, jakou délku bude mít jedna strana šestiúhleníku. Síť šestiúhelníků byla vytvořena jako tříúrovňový for cyklus. Vnitřní cyklus vykresluje jeden šestiúhelník. Na prostřední úrovni se nacházejí dva cykly. První obsahuje vnitřní cyklus a posune želvu tak, aby z vrchní stěny šestiúhelníku vykreslila další šestiúhelník. Vzniká tedy šestiúhelníkový sloupec o takovém počtu šestiúhelníků, jaký zadal uživatel - otázka "Zadejte počet řádků". Po dokreslení sloupce se spustí druhý cyklus prostřední úrovně, který posune želvu do místa, odkud může vykreslit další navazující sloupec. Svrchní cyklus poté opakuje vykreslování dalších sloupců, dokud jich nebude tolik, kolik určil uživatel. Po finálním vykreslení se spustí funkce penup, která zamezí želvě kreslit a následující funkce goto přesune želvu na počáteční bod, tj. levý dolní roh sítě.
-Dalším krokem bylo načtení souřadnic místa, kam si hráč přeje zakreslit svoji značku. Po načtení souřadnic se spustí podmínka, která kontroluje, že se souřadnice pole nachází v hracím poli. V případě, že se tak nestane, požádá podmínka hráče o nové načtení souřadnic. Samotnému vykreslení značky předchází dva posunovací for cykly (jeden pro sloupce a druhý pro řádky), které želvu přesunou na příslušnou souřadnici. Po dosažení souřadnice se želva posune do středu šestiúhleníku. Funkcí pendown se u ní opět spustí možnost kreslit čáry a želva vykreslí křížek nebo kolečko. A to podle toho, zda se jedná ho prvního nebo druhého hráče (Podle toho zda je proměná hrac1 True nebo False). Po vykreslení se možnost kreslení opět vypne (penup), želva se posune na počáteční bod sítě (goto), od proměné pocpol (celkový počet políček ve hracím poli) se odečte jedna a pomocí negace proměné hrac1 dojde k tahu druhého hráče. Po dosažení takového počtu tahů jaký je počet políček v sítě dojde ke konci hry a k výpisu zprávy o něm. 
+Bonusové úkoly:
+* možnost zadat volitelné rozměry hracího pole
+* síť bude tvořena šestiúhelníky
+* odevzdejte úkol přes GitHub.
+
+**Vypracování:**
+Program se nejprve uživatele zeptá, jakou délku má mít jedna strana šestiúhleníku a jaké rozměry má mít šestiúhelníková síť. Po zadání těchto údajů dojde k vykreslení sítě pomocí *želví grafiky*. *Želva* poté přestane kreslit a přesune se na počáteční bod, tj. levý dolní roh sítě. 
+V dalším kroku se program zeptá na souřadnice pole, kam si první hráč přeje zakreslit svoji značku. Po zadání se *želva* přesune do prostředka zadaného pole a vykreslí křížek. Následně přestane kreslit a přesune se na počáteční bod. Program se poté zeptá druhého hráče na souřadnice pole. Postup se opakuje (střídá se vykreslení křížku a kolečka) do té doby, než jsou všechna pole obsazena. Program pak hru ukončí a oznámí to uživateli.
