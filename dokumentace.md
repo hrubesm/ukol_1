@@ -2,7 +2,7 @@
 Vytvořte hru piškvorky, která se bude střídavě ptát hráčů na souřadnice jejich tahu. Hrá má tyto podmínky:
 * Pokud dojde k zadání souřadnic mimo herní plán, program vyzve hráče k novému zadání souřadnic. 
 * Není potřeba vyhodnocovat vítězství jednoho hráče
-* Není potřeba zaváďět kontrolu zajišťující obsazení pole právě jednou 
+* Není potřeba zavádět kontrolu zajišťující obsazení pole právě jednou 
 
 Bonusové úkoly:
 * možnost zadat volitelné rozměry hracího pole
