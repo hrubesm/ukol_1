@@ -91,7 +91,6 @@ for _ in range (pocpol) : #Cyklus se bude opakovat, dokud nebudou všechna pole 
         
     penup()
     goto(0,0)    
-    pocpol -= 1 #Odečtení jednoho volného pole, na které byla právě nakreslena značka
     hrac1 = not hrac1 #Výměna hráčů
 print("Konec hry!")  
 exitonclick() #Nechá otevřené okno s želvou
